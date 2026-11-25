@@ -1,0 +1,27 @@
+- step: 
+    name: print-env
+    environment: manual-gpu 
+    image: python 
+    command: |
+      echo "yo"
+      env | grep VH
+    environment-variables: 
+      - name: STEP_LEVEL
+        default: step_value
+
+- pipeline: 
+    name: env-pipe
+
+    nodes: 
+      - name: node_1
+        step: print-env
+        type: execution 
+      - name: node_2
+        step: print-env
+        type: execution 
+    edges: 
+      - [node_1.dependency.*, node_2.dependency.*]
+
+      
+
+
