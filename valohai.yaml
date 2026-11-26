@@ -5,6 +5,7 @@
     command: |
       echo "yo"
       env | grep LEVEL
+      echo "actuall value: " $SECRET_PROJECT_LEVEL
     environment-variables: 
       - name: STEP_LEVEL
         default: step_value
