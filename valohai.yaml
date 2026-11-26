@@ -1,6 +1,6 @@
 - step: 
     name: print-env
-    environment: manual-gpu
+    environment: tpad
     image: python 
     command: |
       echo "yo"
@@ -16,6 +16,8 @@
     environment-variables: 
       - name: STEP_LEVEL
         default: step_value
+      - name: SECRET_PROJECT_LEVEL
+
 
 - pipeline: 
     name: env-pipe
