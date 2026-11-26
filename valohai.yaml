@@ -1,6 +1,6 @@
 - step: 
     name: print-env
-    environment: manual-gpu 
+    environment: manual-gpu
     image: python 
     command: |
       echo "yo"
@@ -8,7 +8,10 @@
       python -c '
       from os import getenv 
       value = getenv("SECRET_PROJECT_LEVEL", default="oh nouth, dfault")
-      print("actuall value: ", value)
+      print("|", end="")
+      for c in value:
+        print(c, end="_")
+      print("|")
       '
     environment-variables: 
       - name: STEP_LEVEL
@@ -26,7 +29,4 @@
         type: execution 
     edges: 
       - [node_1.dependency.*, node_2.dependency.*]
-
-      
-
 
