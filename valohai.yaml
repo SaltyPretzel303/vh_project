@@ -5,7 +5,11 @@
     command: |
       echo "yo"
       env | grep LEVEL
-      echo "actuall value: " $SECRET_PROJECT_LEVEL
+      python -c '
+      from os import getenv 
+      value = getenv("SECRET_PROJECT_LEVEL", default="oh nouth, dfault")
+      print("actuall value: ", value)
+      '
     environment-variables: 
       - name: STEP_LEVEL
         default: step_value
