@@ -1,6 +1,6 @@
 - step: 
     name: print-env
-    environment: manual-gpu
+    environment: tpad
     image: python 
     command: |
       echo "yo"
